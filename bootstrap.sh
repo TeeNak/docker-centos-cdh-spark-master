@@ -3,7 +3,13 @@
 if [ ! -d "/hadoop/hdfs/cache/dfs/name/current" ]; then
     #initialize name node
     sudo -u hdfs hdfs namenode -format
+
 fi
+
+# setting spark defaults
+echo spark.yarn.jar hdfs:///spark/spark-assembly-1.6.2-hadoop2.6.0.jar > $SPARK_HOME/conf/spark-defaults.conf
+cp $SPARK_HOME/conf/metrics.properties.template $SPARK_HOME/conf/metrics.properties
+
 
 # When using service command it says "Failed to get D-Bus connection: Operation not permitted"
 # There is 3 ways to work around this phenomenon.
