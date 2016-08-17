@@ -38,9 +38,8 @@ fi
 CMD=${1:-"exit 0"}
 if [[ "$CMD" == "-d" ]];
 then
-	: #NOP
-	#service sshd stop
-	#/usr/sbin/sshd -D -d
+	service sshd stop
+	/usr/sbin/sshd -D -d
 else
 	echo "$*"
 	/bin/bash -c "$*"
