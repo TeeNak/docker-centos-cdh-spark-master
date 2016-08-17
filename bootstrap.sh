@@ -38,8 +38,11 @@ fi
 CMD=${1:-"exit 0"}
 if [[ "$CMD" == "-d" ]];
 then
-	service sshd stop
-	/usr/sbin/sshd -D -d
+	#service sshd stop
+	#/usr/sbin/sshd -D -d
+        
+        #Temporary doing this way at this moment, the thing we need actually issupervisord
+        /bin/bash -c "while true; do sleep 1; done"
 else
 	echo "$*"
 	/bin/bash -c "$*"
