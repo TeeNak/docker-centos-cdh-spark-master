@@ -41,7 +41,7 @@ then
 	#service sshd stop
 	#/usr/sbin/sshd -D -d
         
-        #Temporary doing this way at this moment, the thing we need actually issupervisord
+        #Temporary doing this way at this moment, the thing we need actually is supervisord
         /bin/bash -c "while true; do sleep 1; done"
 else
 	echo "$*"
